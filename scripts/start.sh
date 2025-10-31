@@ -1,4 +1,5 @@
 #!/bin/bash
-cd /home/ec2-user/nodejs-cicd-demo
-nohup npm start > app.log 2>&1 &
+echo "Starting Flask app..."
+cd /home/ec2-user/flask-app
+nohup python3 app.py > app.log 2>&1 &
 

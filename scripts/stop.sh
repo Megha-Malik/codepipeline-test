@@ -1,3 +1,4 @@
 #!/bin/bash
-pkill node || true
+echo "Stopping old Flask app..."
+pkill -f app.py || true
 

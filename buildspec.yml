@@ -3,17 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      python: 3.9
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      - pip install -r requirements.txt -t .
   build:
     commands:
-      - echo "Running tests..."
-      - npm test
+      - echo "Build complete - Flask app ready for deployment"
   post_build:
     commands:
-      - echo "Build completed successfully!"
+      - echo "Zipping artifact..."
+      - zip -r flask-app.zip .
 artifacts:
   files:
     - '**/*'
